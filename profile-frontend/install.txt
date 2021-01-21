@@ -1,0 +1,47 @@
+You will see many directories here. All of the source code is contained under the src folder and the tests under the tests folder
+
+src/assets - contains all static assets (icons, illustrations, thumbnails) required for your project
+
+src/components - contains all the React components (building blocks) for your profile website
+
+src/data - includes a file config.js that dynamically picks up data to show on the webpage
+
+src/hooks and src/providers - responsible for providing light and dark themes to your profile
+
+src/pages - lists all the pages in your profile. In this project, there are only two pages - the index page containing your profile data and the 404 page for any other non existent route
+
+
+Other key files include
+
+package.json - this file contains the dependencies for the project
+
+Run following commands:
+
+1. Go inside profile-frontend
+2. npm install - to install all required node modules
+3. npm start - to start server locally , this basically runs command 'gatsby develop -H 0.0.0.0 -p 8081'
+4. npm test - to run tests
+5. npm run-script - to generate static pages using gatsby
+
+-> netlify login // to login to netlify, copy paste url received and authorize it
+-> netlify deploy --dir=public --prod  // to run on netlify
+
+Go inside profile-backend
+echo PORT=8082 > .env
+npm install
+npm start // starts server on port 8082
+Edit Backend_URL in .env.production 
+You can use ' curl http://localhost:8082/entries ' to test out database file
+
+To deploy on heroku
+1. Sign up on heroku
+2. Create new app
+3. Give app name
+4. Click Create app
+5. heroku login -i
+6. heroku plugins: install heroku-builds
+7. heroku builds: create -a <app name given above> // it will deploy and give you a public url
+
+Everytime you do a change in environment configuration file, run
+1. npm run-script build
+2. netlify deploy --dir=public --prod
