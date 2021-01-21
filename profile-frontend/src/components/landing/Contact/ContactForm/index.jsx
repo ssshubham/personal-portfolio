@@ -17,8 +17,7 @@ export default () => (
       }}
       validationSchema={Yup.object().shape({
         name: Yup.string().required('Full name field is required'),
-        email: Yup.string()
-          // TODO: add the email validation here
+        email: Yup.string().email("Invalid email")
           .required('Email field is required'),
         message: Yup.string().required('Message field is required'),
       })}
